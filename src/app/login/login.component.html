@@ -1,0 +1,45 @@
+<div class="container-md">
+  <div class="login-wrapper">
+    <div class="card">
+      <div class="card-body">
+        <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+
+          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Designation</label>
+            <select class="form-select" id="inputGroupSelect01" name="designation" required ngModel>
+              <option selected value="Doctor">Doctor</option>
+              <option value="Administrator">Administrator</option>
+              <option value="Receptionist">Receptionist</option>              
+            </select>
+          </div>
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com"
+              required autofocus ngModel>
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password"
+              required ngModel>
+            <label for="floatingPassword">Password</label>
+          </div>
+
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+          <div class="alert alert-danger" role="alert" *ngIf="isformInvalid">
+            Please fill all fields
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="areCredentialInvalid">
+            Invalid user or password
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
